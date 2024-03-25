@@ -2,16 +2,18 @@
 title: Mikołaj Szawerda
 description: Mikołaj Szawerda
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "https://mszawerd.dev" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Mikołaj Szawerda
-user_description: Music lover
+user_description:  >
+  Hi! I’m Mikołaj, a software engineer intern, student at Warsaw University of Technology, and a passionate musician. My work revolve around Java, DevOps, Kubernetes, Kafka, Spring, and React. I’m pursuing my studies at Warsaw University of Technology, focusing on machine learning, specifically within the context of my thesis on “Conditioning of Musical Generative Models.” <br/> 
+  Thanks for stopping by! <br/> 
 user_title: Software Engineer Intern
 email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
+twitter_username: https://research.mszawerd.dev
+github_username:  https://github.com/MikolajSzawerda
+gplus_username:  https://www.linkedin.com/in/miko%C5%82aj-szawerda-a6b40822b/
 
 # Google-analytics
 google-analytics:
