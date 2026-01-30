@@ -1,0 +1,64 @@
+section_title: "Featured Projects"
+tabs_label: "Project categories"
+default_filter: "best"
+hero:
+  label: "Featured Project"
+  title: "Parcel Tracking System"
+  image: "/assets/img/pr1.jpg"
+  image_alt: "code editor"
+  description: "Microservices-based Parcel Tracking System allowing clients to add and track shipments using unique tracking numbers. Integrates various carriers, local database storage, and automatic updates."
+  stack:
+    - "Java, Spring Boot, Resilience4j, React"
+    - "Apache Kafka, MinIO, Hashicorp Vault"
+    - "Docker, Jenkins"
+  cta:
+    text: "View Case Study"
+    href: "https://github.com/MikolajSzawerda/Parcel-tracking-system"
+categories:
+  - id: "best"
+    label: "Best"
+  - id: "music-ml"
+    label: "Music ML"
+  - id: "vr"
+    label: "VR"
+  - id: "machine-learning"
+    label: "Machine Learning"
+  - id: "university"
+    label: "University"
+projects:
+  - title: "Song Skip Prediction"
+    description: "Machine Learning project for \"Pozytywka\" music streaming service. Analyzing data to predict song skips and optimize user experience."
+    image: "/assets/img/pr2.jpg"
+    image_alt: "data visualization"
+    categories: ["music-ml", "best"]
+    tags: ["Sklearn", "Tensorflow", "Pandas"]
+    link:
+      text: "Check it out"
+      href: "https://github.com/MikolajSzawerda/Song-skip-predictor"
+  - title: "Virtual Museum"
+    description: "An immersive VR experience allowing users to tour a virtual art gallery. Built with Unity for Oculus Quest 2."
+    image: "/assets/img/pr1.jpg"
+    image_alt: "virtual reality headset"
+    categories: ["vr"]
+    tags: ["Unity", "C#", "VR"]
+    link:
+      text: "Check it out"
+      href: "#"
+  - title: "Pathfinding Visualizer"
+    description: "Interactive web tool to visualize Dijkstra, A*, and BFS algorithms in real-time. Great for educational purposes."
+    image: "/assets/img/pr1.jpg"
+    image_alt: "algorithm visualization"
+    categories: ["machine-learning", "best"]
+    tags: ["React", "TypeScript", "Algorithms"]
+    link:
+      text: "Check it out"
+      href: "#"
+  - title: "ML Engineering Coursework"
+    description: "Selected university projects focused on machine learning engineering, experimentation, and technical reporting."
+    image: "/assets/img/pr2.jpg"
+    image_alt: "research notes"
+    categories: ["university"]
+    tags: ["Research", "Experiments", "Reports"]
+    link:
+      text: "Check it out"
+      href: "#"
