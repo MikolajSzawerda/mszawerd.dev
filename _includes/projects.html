@@ -39,17 +39,46 @@
     font-weight: 600;
     margin-bottom: 10px;
   }
+  .projects-hero-cta {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 12px;
+    border: 1px solid #2f5fff;
+    color: #fff;
+    background: #2f5fff;
+    box-shadow: 0 10px 18px rgba(47, 95, 255, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .projects-hero-cta:hover {
+    background: #2146ff;
+    border-color: #2146ff;
+    box-shadow: 0 12px 22px rgba(33, 70, 255, 0.3);
+    transform: translateY(-1px);
+  }
   .project-tabs {
     text-align: center;
     margin: 10px 0 30px 0;
   }
   .project-tab {
     margin: 0 6px;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    border: 1px solid #d7dbe3;
+    color: #2f3a4a;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .project-tab:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
   }
   .project-tab.is-active {
     background: #1a222c;
     color: #fff;
     border-color: #1a222c;
+    box-shadow: 0 10px 20px rgba(26, 34, 44, 0.25);
   }
   .projects-grid {
     display: grid;
@@ -109,6 +138,23 @@
   .project-card-actions {
     margin-top: auto;
   }
+  .project-card .project-link {
+    display: inline-block;
+    text-align: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #2f5fff;
+    color: #2f5fff;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(47, 95, 255, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .project-card .project-link:hover {
+    background: #2f5fff;
+    color: #fff;
+    box-shadow: 0 10px 18px rgba(47, 95, 255, 0.25);
+    transform: translateY(-1px);
+  }
 </style>
 
 <div class="projects-hero">
@@ -125,14 +171,14 @@
         <li>Apache Kafka, MinIO, Hashicorp Vault</li>
         <li>Docker, Jenkins</li>
       </ul>
-      <a class="project-link" href="https://github.com/MikolajSzawerda/Parcel-tracking-system">View Case Study</a>
+      <a class="project-link projects-hero-cta" href="https://github.com/MikolajSzawerda/Parcel-tracking-system">View Case Study</a>
     </div>
   </div>
 </div>
 
 <div class="user-details" style="margin-top:0;">
   <div class="project-tabs" role="tablist" aria-label="Project categories">
-    <button class="project-link project-tab is-active" type="button" data-filter="all">All</button>
+    <button class="project-link project-tab is-active" type="button" data-filter="best">Best</button>
     <button class="project-link project-tab" type="button" data-filter="music-ml">Music ML</button>
     <button class="project-link project-tab" type="button" data-filter="vr">VR</button>
     <button class="project-link project-tab" type="button" data-filter="machine-learning">Machine Learning</button>
@@ -141,7 +187,7 @@
 </div>
 
 <div class="projects-grid">
-  <div class="project-card" data-category="music-ml">
+  <div class="project-card" data-category="music-ml best">
     <div class="project-card-media">
       <img alt="data visualization" src="{{ "/assets/img/pr2.jpg" | prepend: site.baseurl }}" />
     </div>
@@ -177,7 +223,7 @@
     </div>
   </div>
 
-  <div class="project-card" data-category="machine-learning">
+  <div class="project-card" data-category="machine-learning best">
     <div class="project-card-media">
       <img alt="algorithm visualization" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
     </div>
@@ -226,8 +272,8 @@
       });
 
       cards.forEach(function (card) {
-        var category = card.getAttribute("data-category");
-        var show = filter === "all" || category === filter;
+        var categories = (card.getAttribute("data-category") || "").split(" ");
+        var show = categories.indexOf(filter) !== -1;
         card.style.display = show ? "flex" : "none";
       });
     }
@@ -238,6 +284,6 @@
       });
     });
 
-    setActive("all");
+    setActive("best");
   })();
 </script>
