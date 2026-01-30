@@ -11,7 +11,7 @@ sections:
         class: "devicon-python-plain-wordmark colored"
       - type: "icon"
         class: "devicon-nodejs-plain-wordmark colored"
-    description: "Proficient in Java and Spring Framework for robust application development and large-scale real-time collaborative content creation. Skilled in Python, C/C++, and database management (SQL, NoSQL). Knowledgeable in design patterns, TDD, DDD, and microservices for scalable solutions."
+    description: "Proficient in Java, Spring Framework, and Node.js for robust application development especially for large-scale real-time collaborative content creation products. Product-minded in making useful software. Knowledgeable in design patterns, TDD, DDD, and microservices for scalable solutions."
   - title: "DevOps and BigData"
     icons:
       - type: "icon"
