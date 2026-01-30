@@ -1,32 +1,243 @@
-<div class="user-details">
-  <h1> Featured Projects</h1>
+<div class="user-details" id="projects-all">
+  <h1>Featured Projects</h1>
 </div>
-<div class="user-projects">
-  <div class="images-right">
-    <img alt="mountains" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents">
-    <h3> Parcel Tracking System </h3>
-    <ul>
-      <li>Java, Spring Boot, Resilience4j, React</li>
-      <li>Apache Kafka, MinIO, Hashicorp Vault</li>
-      <li>Docker, Jenkins</li>
-    </ul>
-    <p>Microservices-based Parcel Tracking System. It allows clients to add and track shipments using unique tracking numbers. The system integrates with various carriers for precise shipment location tracking. Key features include local database storage of tracking history and automatic updates for registered shipments. The system also supports searching across all shipment attributes and offers functionality for printing tracking histories, with files stored in a dedicated resource.</p>
-    <a class="project-link" href="https://github.com/MikolajSzawerda/Parcel-tracking-system">Check it out</a>
+
+<style>
+  .projects-hero {
+    margin: 30px auto 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  .projects-hero-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .projects-hero-media {
+    flex: 1 1 55%;
+    min-width: 280px;
+    background: #10131a;
+  }
+  .projects-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .projects-hero-content {
+    flex: 1 1 45%;
+    min-width: 260px;
+    padding: 28px;
+  }
+  .projects-hero-label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2f5fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .project-tabs {
+    text-align: center;
+    margin: 10px 0 30px 0;
+  }
+  .project-tab {
+    margin: 0 6px;
+  }
+  .project-tab.is-active {
+    background: #1a222c;
+    color: #fff;
+    border-color: #1a222c;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 22px;
+  }
+  @media only screen and (min-width: 650px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media only screen and (min-width: 950px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .project-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-media {
+    background: #10131a;
+    height: 160px;
+  }
+  .project-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .project-card-body {
+    padding: 16px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .project-card-title {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+  }
+  .project-card-tags {
+    margin: 10px 0 14px 0;
+  }
+  .project-card-tag {
+    display: inline-block;
+    margin: 0 6px 6px 0;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: #f0f2f6;
+    color: #3c4656;
+    font-size: 0.78rem;
+  }
+  .project-card-actions {
+    margin-top: auto;
+  }
+</style>
+
+<div class="projects-hero">
+  <div class="projects-hero-inner">
+    <div class="projects-hero-media">
+      <img alt="code editor" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="projects-hero-content">
+      <span class="projects-hero-label">Featured Project</span>
+      <h3 style="margin-top:0;">Parcel Tracking System</h3>
+      <p>Microservices-based Parcel Tracking System allowing clients to add and track shipments using unique tracking numbers. Integrates various carriers, local database storage, and automatic updates.</p>
+      <ul>
+        <li>Java, Spring Boot, Resilience4j, React</li>
+        <li>Apache Kafka, MinIO, Hashicorp Vault</li>
+        <li>Docker, Jenkins</li>
+      </ul>
+      <a class="project-link" href="https://github.com/MikolajSzawerda/Parcel-tracking-system">View Case Study</a>
+    </div>
   </div>
 </div>
-<div class="user-projects">
-  <div class="images-left">
-    <img alt="mountains" src="{{ "/assets/img/pr2.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3>Song skip prediction</h3>
-    <ul>
-      <li>Sklearn, Tensorflow</li>
-      <li>Pandas, numpy, seaborn</li>
-    </ul>
-    <p>This project is a part of the Machine Learning Engineering at Warsaw University of Technology course aimed at developing a practical solution for "Pozytywka," an online music streaming service. As analysts, we step into the role of tackling a vaguely described task, requiring us to specify details for implementation. The challenge involves understanding the problem, analyzing data, and sometimes negotiating with management (tutor) to ensure the models are production-ready and future-proof for subsequent versions.</p>
-    <a class="project-link" href="https://github.com/MikolajSzawerda/Song-skip-predictor">Check it out</a>
+
+<div class="user-details" style="margin-top:0;">
+  <div class="project-tabs" role="tablist" aria-label="Project categories">
+    <button class="project-link project-tab is-active" type="button" data-filter="all">All</button>
+    <button class="project-link project-tab" type="button" data-filter="music-ml">Music ML</button>
+    <button class="project-link project-tab" type="button" data-filter="vr">VR</button>
+    <button class="project-link project-tab" type="button" data-filter="machine-learning">Machine Learning</button>
+    <button class="project-link project-tab" type="button" data-filter="university">University</button>
   </div>
 </div>
+
+<div class="projects-grid">
+  <div class="project-card" data-category="music-ml">
+    <div class="project-card-media">
+      <img alt="data visualization" src="{{ "/assets/img/pr2.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">Song Skip Prediction</h3>
+      <p>Machine Learning project for "Pozytywka" music streaming service. Analyzing data to predict song skips and optimize user experience.</p>
+      <div class="project-card-tags">
+        <span class="project-card-tag">Sklearn</span>
+        <span class="project-card-tag">Tensorflow</span>
+        <span class="project-card-tag">Pandas</span>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-link" href="https://github.com/MikolajSzawerda/Song-skip-predictor">Check it out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" data-category="vr">
+    <div class="project-card-media">
+      <img alt="virtual reality headset" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">Virtual Museum</h3>
+      <p>An immersive VR experience allowing users to tour a virtual art gallery. Built with Unity for Oculus Quest 2.</p>
+      <div class="project-card-tags">
+        <span class="project-card-tag">Unity</span>
+        <span class="project-card-tag">C#</span>
+        <span class="project-card-tag">VR</span>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-link" href="#">Check it out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" data-category="machine-learning">
+    <div class="project-card-media">
+      <img alt="algorithm visualization" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">Pathfinding Visualizer</h3>
+      <p>Interactive web tool to visualize Dijkstra, A*, and BFS algorithms in real-time. Great for educational purposes.</p>
+      <div class="project-card-tags">
+        <span class="project-card-tag">React</span>
+        <span class="project-card-tag">TypeScript</span>
+        <span class="project-card-tag">Algorithms</span>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-link" href="#">Check it out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" data-category="university">
+    <div class="project-card-media">
+      <img alt="research notes" src="{{ "/assets/img/pr2.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">ML Engineering Coursework</h3>
+      <p>Selected university projects focused on machine learning engineering, experimentation, and technical reporting.</p>
+      <div class="project-card-tags">
+        <span class="project-card-tag">Research</span>
+        <span class="project-card-tag">Experiments</span>
+        <span class="project-card-tag">Reports</span>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-link" href="#">Check it out</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll(".project-tab");
+    var cards = document.querySelectorAll(".project-card");
+
+    function setActive(filter) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-filter") === filter;
+        tab.classList.toggle("is-active", isActive);
+      });
+
+      cards.forEach(function (card) {
+        var category = card.getAttribute("data-category");
+        var show = filter === "all" || category === filter;
+        card.style.display = show ? "flex" : "none";
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        setActive(tab.getAttribute("data-filter"));
+      });
+    });
+
+    setActive("all");
+  })();
+</script>
