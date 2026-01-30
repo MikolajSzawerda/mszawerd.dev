@@ -3,62 +3,166 @@ tabs_label: "Project categories"
 default_filter: "best"
 hero:
   label: "Featured Project"
-  title: "Parcel Tracking System"
-  image: "/assets/img/pr1.jpg"
-  image_alt: "code editor"
-  description: "Microservices-based Parcel Tracking System allowing clients to add and track shipments using unique tracking numbers. Integrates various carriers, local database storage, and automatic updates."
+  title: "MusicGen Lens"
+  image: "/assets/img/musicgen-act.png"
+  image_alt: "musicgen activations"
+  description: "MusicGen Lens toolkit for collecting and storing model activations with nnsight, enabling audio ML interpretability and analysis pipelines."
   stack:
-    - "Java, Spring Boot, Resilience4j, React"
-    - "Apache Kafka, MinIO, Hashicorp Vault"
-    - "Docker, Jenkins"
+    - "Python, PyTorch, nnsight"
+    - "Activation collection, interpretability"
   cta:
-    text: "View Case Study"
-    href: "https://github.com/MikolajSzawerda/Parcel-tracking-system"
+    text: "GitHub"
+    href: "https://github.com/MikolajSzawerda/musicgen-activations"
 categories:
   - id: "best"
     label: "Best"
   - id: "music-ml"
     label: "Music ML"
-  - id: "vr"
-    label: "VR"
+  - id: "audio-music"
+    label: "Audio/Music"
   - id: "machine-learning"
     label: "Machine Learning"
+  - id: "vr"
+    label: "VR"
   - id: "university"
     label: "University"
+  - id: "swe"
+    label: "SWE"
+  - id: "hackathons"
+    label: "Hackathons"
 projects:
-  - title: "Song Skip Prediction"
-    description: "Machine Learning project for \"Pozytywka\" music streaming service. Analyzing data to predict song skips and optimize user experience."
-    image: "/assets/img/pr2.jpg"
-    image_alt: "data visualization"
-    categories: ["music-ml", "best"]
-    tags: ["Sklearn", "Tensorflow", "Pandas"]
+  - title: "Parcel Tracking System"
+    description: "Microservices parcel tracking system (Spring/Java) with carrier integrations, tracking history in database, search, periodic updates, and event-driven services."
+    image: "/assets/img/parcel-tracking.jpg"
+    image_alt: "parcel tracking system"
+    categories: ["swe"]
+    tags: ["Java", "Spring", "Microservices", "Kafka", "Docker"]
     link:
-      text: "Check it out"
-      href: "https://github.com/MikolajSzawerda/Song-skip-predictor"
-  - title: "Virtual Museum"
-    description: "An immersive VR experience allowing users to tour a virtual art gallery. Built with Unity for Oculus Quest 2."
+      text: "GitHub"
+      href: "https://github.com/MikolajSzawerda/Parcel-tracking-system"
+  - title: "ChatUp"
+    description: "Java Spring + JavaFX messaging app with channels/DMs, real-time chat via RabbitMQ, Elasticsearch full-text search, JWT auth, and PostgreSQL backend."
+    image: "/assets/img/chatup.png"
+    image_alt: "chat application"
+    categories: ["swe"]
+    tags: ["Java", "Spring", "RabbitMQ", "Elasticsearch", "PostgreSQL"]
+  - title: "Quicpolls"
+    description: "Real-time survey app for events with QR-code access and live dashboards, built in React/TypeScript with Supabase (PostgreSQL)."
+    image: "/assets/img/quicpolls.png"
+    image_alt: "live polling dashboard"
+    categories: ["swe"]
+    tags: ["React", "TypeScript", "Supabase", "PostgreSQL"]
+  - title: "P2P Torrent System"
+    description: "Python P2P torrent system with coordinator service, client/file server, chunked transfers, and Dockerized networking."
     image: "/assets/img/pr1.jpg"
-    image_alt: "virtual reality headset"
-    categories: ["vr"]
-    tags: ["Unity", "C#", "VR"]
-    link:
-      text: "Check it out"
-      href: "#"
-  - title: "Pathfinding Visualizer"
-    description: "Interactive web tool to visualize Dijkstra, A*, and BFS algorithms in real-time. Great for educational purposes."
-    image: "/assets/img/pr1.jpg"
-    image_alt: "algorithm visualization"
-    categories: ["machine-learning", "best"]
-    tags: ["React", "TypeScript", "Algorithms"]
-    link:
-      text: "Check it out"
-      href: "#"
-  - title: "ML Engineering Coursework"
-    description: "Selected university projects focused on machine learning engineering, experimentation, and technical reporting."
+    image_alt: "peer-to-peer networking"
+    categories: ["swe"]
+    tags: ["Python", "Networking", "Docker", "Distributed Systems"]
+  - title: "Console Spreadsheet"
+    description: "Python console spreadsheet (Excel-like) with cell addressing, formulas over ranges, live recalculation, and CSV load/save."
+    image: "/assets/img/console-spreadsheet.png"
+    image_alt: "terminal spreadsheet"
+    categories: ["swe", "university"]
+    tags: ["Python", "CLI", "CSV", "Data Structures"]
+  - title: "Design Patterns (C++)"
+    description: "C++ implementations of classic software design patterns focused on clean architecture, extensibility, and maintainable backend code."
     image: "/assets/img/pr2.jpg"
-    image_alt: "research notes"
-    categories: ["university"]
-    tags: ["Research", "Experiments", "Reports"]
-    link:
-      text: "Check it out"
-      href: "#"
+    image_alt: "design patterns diagram"
+    categories: ["swe", "university"]
+    tags: ["C++", "Design Patterns", "OOP", "Architecture"]
+  - title: "DNA Variant Annotator"
+    description: "DNA variant annotation platform for splicing analysis with REST API core, worker services for SNV/INDEL processing, and optional UI."
+    image: "/assets/img/dna-annotator.png"
+    image_alt: "dna annotation"
+    categories: ["machine-learning", "swe", "university"]
+    tags: ["Java", "REST API", "Bioinformatics", "SNV/INDEL"]
+  - title: "Thermal-Guided Rocket"
+    description: "Thermal-guided rocket project using Raspberry Pi, infrared camera input, servo control, and real-time heatmap visualization and tracking."
+    image: "/assets/img/rocket.png"
+    image_alt: "thermal tracking visualization"
+    categories: ["swe", "university"]
+    tags: ["Embedded", "Raspberry Pi", "C", "Computer Vision"]
+  - title: "Lorenz Attractor"
+    description: "C++ OpenGL visualization of the Lorenz attractor with real-time animation of chaotic trajectories and 3D rendering."
+    image: "/assets/img/lorenz.gif"
+    image_alt: "lorenz attractor"
+    categories: ["swe", "university"]
+    tags: ["C++", "OpenGL", "Simulation", "Visualization"]
+  - title: "Unity AR Multiplayer"
+    description: "Unity AR multiplayer game for Android/iOS using Cloud Anchors and Firebase for shared anchors and real-time sync."
+    image: "/assets/img/vr-ar-multiplayer.png"
+    image_alt: "unity ar multiplayer"
+    categories: ["vr", "best", "swe"]
+    tags: ["Unity", "ARCore", "Firebase", "Multiplayer"]
+  - title: "Real-Time Style Transfer for Games"
+    description: "Research on real-time neural style transfer for games using Unity integration, G-buffer guidance, distillation, and quantization for fast inference."
+    image: "/assets/img/rt-style.png"
+    image_alt: "neural style transfer"
+    categories: ["machine-learning", "vr"]
+    tags: ["Deep Learning", "Unity", "Style Transfer", "Optimization"]
+  - title: "Stable Diffusion (UNet)"
+    description: "PyTorch diffusion model with UNet architecture and Lightning training for image generation on custom datasets (traffic images)."
+    image: "/assets/img/stable-diffusion.png"
+    image_alt: "diffusion model"
+    categories: ["machine-learning"]
+    tags: ["PyTorch", "Diffusion", "UNet", "Lightning"]
+  - title: "MusicSAE"
+    description: "Sparse autoencoders for unsupervised music representation learning on MusicGen/RAVE/YuE activations, producing interpretable audio embeddings."
+    image: "/assets/img/music-sae.png"
+    image_alt: "music embeddings"
+    categories: ["music-ml", "audio-music", "machine-learning", "best"]
+    tags: ["Python", "SAE", "MusicGen", "Representation Learning"]
+  - title: "MusicGen Lens"
+    description: "MusicGen Lens toolkit for collecting and storing model activations with nnsight, enabling audio ML interpretability and analysis pipelines."
+    image: "/assets/img/musicgen-act.png"
+    image_alt: "musicgen activations"
+    categories: ["music-ml", "audio-music", "machine-learning", "best"]
+    tags: ["Python", "MusicGen", "nnsight", "Interpretability"]
+  - title: "Music Programming Language"
+    description: "Java 21 music programming language with lexer/parser/AST, interpreter, static typing, and MIDI import/export."
+    image: "/assets/img/music-programming-language.png"
+    image_alt: "music programming language"
+    categories: ["audio-music", "swe", "university"]
+    tags: ["Java", "Compiler", "MIDI", "PL"]
+  - title: "DJ Console"
+    description: "C++ DJ console built with JUCE for real-time audio playback, multi-track mixing, effects (EQ/reverb/delay), tempo sync, and playlist control."
+    image: "/assets/img/dj-console.png"
+    image_alt: "dj console"
+    categories: ["audio-music", "swe"]
+    tags: ["C++", "JUCE", "Audio", "DSP"]
+  - title: "Venom (Python JUCE)"
+    description: "Python JUCE bindings (via pybind11) for building VST3/AU audio plugins, enabling rapid DSP prototyping with C++ build tooling."
+    image: "/assets/img/venom.png"
+    image_alt: "audio plugin tooling"
+    categories: ["audio-music", "swe"]
+    tags: ["Python", "JUCE", "VST3", "pybind11"]
+  - title: "MusicGen Steering Thesis"
+    description: "Research thesis on steering MusicGen with activation interventions (DiffMean, RFM, SAE) for controllable music generation and interpretability."
+    image: "/assets/img/musicgen-thesis.png"
+    image_alt: "musicgen research"
+    categories: ["music-ml", "machine-learning", "university"]
+    tags: ["MusicGen", "Interpretability", "ML Research"]
+  - title: "BHL 2023 - Magazyn 4.0"
+    description: "Hackathon project “Magazyn 4.0” (3rd place, BEST Hacking League): warehouse optimization platform with FastAPI websockets, React Native barcode app, React dashboard, and MongoDB analytics."
+    image: "/assets/img/hackathon-bhl23.png"
+    image_alt: "warehouse optimization"
+    categories: ["swe", "hackathons"]
+    tags: ["FastAPI", "React Native", "MongoDB", "Hackathon"]
+  - title: "Pocket Travel Agent"
+    description: "Pocket Travel Agent hackathon app with ElevenLabs TTS, multi-language voice UX, AI trip planning (Perplexity + Mistral), and integrations with Google Maps and OpenMeteo via Make.com workflows."
+    image: "/assets/img/hackathon-elevenlabs.png"
+    image_alt: "voice travel agent"
+    categories: ["audio-music", "machine-learning", "swe", "hackathons"]
+    tags: ["ElevenLabs", "React", "TypeScript", "AI Agents"]
+  - title: "Ensemble 2024"
+    description: "Ensemble 2024 hackathon solution for ML security tasks (Sybil attack + model stealing) with Python notebooks, dataset utilities, and submission pipelines."
+    image: "/assets/img/hackathon-ensemble24.png"
+    image_alt: "ml security"
+    categories: ["machine-learning", "university", "hackathons"]
+    tags: ["Python", "ML Security", "Model Stealing", "Hackathon"]
+  - title: "Ensemble AI 2025"
+    description: "Ensemble AI 2025 hackathon codebase with PyTorch pipelines for image embedding regression (task2) and adversarially robust classification (task3), plus notebooks and evaluation scripts."
+    image: "/assets/img/pr2.jpg"
+    image_alt: "ml pipeline"
+    categories: ["machine-learning", "university", "hackathons"]
+    tags: ["PyTorch", "Adversarial ML", "Embeddings", "Hackathon"]

@@ -11,6 +11,9 @@
   <meta property="og:type" content="{{ head.og_type | default: "website" }}">
   <meta property="og:description" content="{{ head.og_description | default: head.description | default: site.description }}">
 
+  {% if head.favicon %}
+  <link rel="icon" href="{{ head.favicon | prepend: site.baseurl }}">
+  {% endif %}
   <link rel="stylesheet" type="text/css" href="{{ head.devicons_css | default: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" }}" />
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">

@@ -1,10 +1,15 @@
 {% assign about = site.data.about %}
 <div class="user-details">
   <h1>{{ about.section_title | default: "My Expertise" }}</h1>
-  <div>
-    <div>
+  <div class="about-hero">
+    <div class="about-hero-text">
       <p>{{ about.intro | default: site.user_description }}</p>
     </div>
+    {% if about.profile_image %}
+    <div class="about-hero-media">
+      <img class="about-hero-avatar" src="{{ about.profile_image | prepend: site.baseurl }}" alt="{{ about.profile_alt | default: about.section_title }}" />
+    </div>
+    {% endif %}
   </div>
 </div>
 <div class="user">
