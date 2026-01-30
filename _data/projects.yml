@@ -6,7 +6,7 @@ hero:
   title: "MusicGen Lens"
   image: "/assets/img/musicgen-act.png"
   image_alt: "musicgen activations"
-  description: "MusicGen Lens toolkit for collecting and storing model activations with nnsight, enabling audio ML interpretability and analysis pipelines."
+  description: "MusicGen Lens enables a totally new way of controlling generative music models beyond prompts by collecting activations with nnsight and applying activation-level interventions (DiffMean, RFM, SAE) for interpretability and steering."
   stack:
     - "Python, PyTorch, nnsight"
     - "Activation collection, interpretability"
@@ -24,12 +24,12 @@ categories:
     label: "Machine Learning"
   - id: "vr"
     label: "VR"
-  - id: "university"
-    label: "University"
-  - id: "swe"
-    label: "SWE"
   - id: "hackathons"
     label: "Hackathons"
+  - id: "swe"
+    label: "SWE"
+  - id: "university"
+    label: "University"
 projects:
   - title: "Parcel Tracking System"
     description: "Microservices parcel tracking system (Spring/Java) with carrier integrations, tracking history in database, search, periodic updates, and event-driven services."
@@ -54,8 +54,8 @@ projects:
     tags: ["React", "TypeScript", "Supabase", "PostgreSQL"]
   - title: "P2P Torrent System"
     description: "Python P2P torrent system with coordinator service, client/file server, chunked transfers, and Dockerized networking."
-    image: "/assets/img/pr1.jpg"
-    image_alt: "peer-to-peer networking"
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    image_alt: "python icon"
     categories: ["swe"]
     tags: ["Python", "Networking", "Docker", "Distributed Systems"]
   - title: "Console Spreadsheet"
@@ -66,8 +66,8 @@ projects:
     tags: ["Python", "CLI", "CSV", "Data Structures"]
   - title: "Design Patterns (C++)"
     description: "C++ implementations of classic software design patterns focused on clean architecture, extensibility, and maintainable backend code."
-    image: "/assets/img/pr2.jpg"
-    image_alt: "design patterns diagram"
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+    image_alt: "c++ icon"
     categories: ["swe", "university"]
     tags: ["C++", "Design Patterns", "OOP", "Architecture"]
   - title: "DNA Variant Annotator"
@@ -88,7 +88,7 @@ projects:
     image_alt: "lorenz attractor"
     categories: ["swe", "university"]
     tags: ["C++", "OpenGL", "Simulation", "Visualization"]
-  - title: "Unity AR Multiplayer"
+  - title: "AR Quiz"
     description: "Unity AR multiplayer game for Android/iOS using Cloud Anchors and Firebase for shared anchors and real-time sync."
     image: "/assets/img/vr-ar-multiplayer.png"
     image_alt: "unity ar multiplayer"
@@ -113,13 +113,13 @@ projects:
     categories: ["music-ml", "audio-music", "machine-learning", "best"]
     tags: ["Python", "SAE", "MusicGen", "Representation Learning"]
   - title: "MusicGen Lens"
-    description: "MusicGen Lens toolkit for collecting and storing model activations with nnsight, enabling audio ML interpretability and analysis pipelines."
+    description: "MusicGen Lens enables a totally new way of controlling generative music models beyond prompts by collecting activations with nnsight and applying activation-level interventions (DiffMean, RFM, SAE) for interpretability and steering."
     image: "/assets/img/musicgen-act.png"
     image_alt: "musicgen activations"
     categories: ["music-ml", "audio-music", "machine-learning", "best"]
     tags: ["Python", "MusicGen", "nnsight", "Interpretability"]
   - title: "Music Programming Language"
-    description: "Java 21 music programming language with lexer/parser/AST, interpreter, static typing, and MIDI import/export."
+    description: "Interpreter for a custom music programming language with lexer/parser/AST, static typing, and MIDI import/export."
     image: "/assets/img/music-programming-language.png"
     image_alt: "music programming language"
     categories: ["audio-music", "swe", "university"]
@@ -137,7 +137,7 @@ projects:
     categories: ["audio-music", "swe"]
     tags: ["Python", "JUCE", "VST3", "pybind11"]
   - title: "MusicGen Steering Thesis"
-    description: "Research thesis on steering MusicGen with activation interventions (DiffMean, RFM, SAE) for controllable music generation and interpretability."
+    description: "Thesis on steering MusicGen with textual inversion for controllable music generation and interpretability."
     image: "/assets/img/musicgen-thesis.png"
     image_alt: "musicgen research"
     categories: ["music-ml", "machine-learning", "university"]
@@ -162,7 +162,7 @@ projects:
     tags: ["Python", "ML Security", "Model Stealing", "Hackathon"]
   - title: "Ensemble AI 2025"
     description: "Ensemble AI 2025 hackathon codebase with PyTorch pipelines for image embedding regression (task2) and adversarially robust classification (task3), plus notebooks and evaluation scripts."
-    image: "/assets/img/pr2.jpg"
-    image_alt: "ml pipeline"
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+    image_alt: "pytorch icon"
     categories: ["machine-learning", "university", "hackathons"]
     tags: ["PyTorch", "Adversarial ML", "Embeddings", "Hackathon"]
