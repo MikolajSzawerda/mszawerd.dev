@@ -1,0 +1,7 @@
+description: "Hi! I'm Mikołaj, a software engineer II, student at Warsaw University of Technology. My work revolves around Java, DevOps, Kubernetes, Kafka, Spring, React and I’ve worked on large-scale real-time collaborative apps and streaming big data systems. I'm pursuing my studies focusing on machine learning for music and audio explainability and generative music models."
+og_url: "https://mszawerd.dev/"
+og_title: "Mikołaj Szawerda"
+og_type: "website"
+og_description: "I'm Mikołaj, a software engineer II, AI student at Warsaw University of Technology. My work revolves around Java, DevOps, Kubernetes, Kafka, Spring, React and large-scale real-time collaboration apps, streaming data systems, and backend-for-frontend microservices."
+devicons_css: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+favicon: "/assets/img/profile.jpg"

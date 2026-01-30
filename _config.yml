@@ -15,8 +15,5 @@ twitter_username: https://research.mszawerd.dev
 github_username:  https://github.com/MikolajSzawerda
 gplus_username:  https://www.linkedin.com/in/miko%C5%82aj-szawerda-a6b40822b/
 
-# Google-analytics
-google-analytics:
-  id: ""
 
 exclude: ['package.json', 'src' , 'node_modules']

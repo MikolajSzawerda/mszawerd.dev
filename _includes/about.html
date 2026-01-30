@@ -1,32 +1,31 @@
- <div class="user-details">
-  <h1> My Expertise</h1>
-  <div >
-    <div>
-      <p> {{site.user_description}} </p>
+{% assign about = site.data.about %}
+<div class="user-details">
+  <h1>{{ about.section_title | default: "My Expertise" }}</h1>
+  <div class="about-hero">
+    <div class="about-hero-text">
+      <p>{{ about.intro | default: site.user_description }}</p>
     </div>
+    {% if about.profile_image %}
+    <div class="about-hero-media">
+      <img class="about-hero-avatar" src="{{ about.profile_image | prepend: site.baseurl }}" alt="{{ about.profile_alt | default: about.section_title }}" />
+    </div>
+    {% endif %}
   </div>
-</div >
+</div>
 <div class="user">
+  {% for section in about.sections %}
   <div class="tech">
-    <h2>Software engineering</h2>
-    <i class="devicon-spring-original colored"></i>
-    <i class="devicon-java-plain-wordmark colored"></i>
-    <i class="devicon-python-plain-wordmark colored"></i>
-    <p>Proficient in Java and Spring Framework for robust application development. Skilled in Python, C/C++, and database management (SQL, NoSQL). Knowledgeable in design patterns, TDD, DDD, and microservices for scalable solutions.</p>
+    <h2>{{ section.title }}</h2>
+    {% if section.icons %}
+      {% for icon in section.icons %}
+        {% if icon.type == "icon" %}
+          <i class="{{ icon.class }}"></i>
+        {% elsif icon.type == "image" %}
+          <img {% if icon.width %}width="{{ icon.width }}"{% endif %} src="{{ icon.src }}" alt="{{ icon.alt | default: section.title }}" />
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <p>{{ section.description }}</p>
   </div>
-  <div class="tech">
-    <h2>DevOps and BigData</h2>
-    <i class="devicon-kubernetes-plain-wordmark colored"></i>
-    <img width="70px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original-wordmark.svg" />
-    <img width="70px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" />
-    <p>
-      Skilled in DevOps with Kubernetes for application deployment and architecture, ensuring scalability. Experienced in Kafka for data streams and Azure for cloud-based solutions, focusing on performance and reliability.</p>
-  </div>
-  <div class="tech">
-    <h2>ML and Data science</h2>
-    <i class="devicon-pytorch-plain-wordmark colored"></i>
-    <i class="devicon-pandas-plain colored"></i>
-    <i class="devicon-r-plain colored"></i>
-    <p>Familiar with machine learning, applying PyTorch in university research. Comfortable using R and Pandas for data analysis. Solid mathematical background, aiming to utilize statistical models and algorithms for data-driven insights.</p>
-  </div>
+  {% endfor %}
 </div>

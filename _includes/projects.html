@@ -1,32 +1,249 @@
-<div class="user-details">
-  <h1> Featured Projects</h1>
+{% assign projects = site.data.projects %}
+<div class="user-details" id="projects-all">
+  <h1>{{ projects.section_title | default: "Featured Projects" }}</h1>
 </div>
-<div class="user-projects">
-  <div class="images-right">
-    <img alt="mountains" src="{{ "/assets/img/pr1.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents">
-    <h3> Parcel Tracking System </h3>
-    <ul>
-      <li>Java, Spring Boot, Resilience4j, React</li>
-      <li>Apache Kafka, MinIO, Hashicorp Vault</li>
-      <li>Docker, Jenkins</li>
-    </ul>
-    <p>Microservices-based Parcel Tracking System. It allows clients to add and track shipments using unique tracking numbers. The system integrates with various carriers for precise shipment location tracking. Key features include local database storage of tracking history and automatic updates for registered shipments. The system also supports searching across all shipment attributes and offers functionality for printing tracking histories, with files stored in a dedicated resource.</p>
-    <a class="project-link" href="https://github.com/MikolajSzawerda/Parcel-tracking-system">Check it out</a>
+
+<style>
+  .projects-hero {
+    margin: 30px auto 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  .projects-hero-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .projects-hero-media {
+    flex: 1 1 55%;
+    min-width: 280px;
+    background: #10131a;
+  }
+  .projects-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .projects-hero-content {
+    flex: 1 1 45%;
+    min-width: 260px;
+    padding: 28px;
+  }
+  .projects-hero-label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2f5fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .projects-hero-cta {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 12px;
+    border: 1px solid #2f5fff;
+    color: #fff;
+    background: #2f5fff;
+    box-shadow: 0 10px 18px rgba(47, 95, 255, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .projects-hero-cta:hover {
+    background: #2146ff;
+    border-color: #2146ff;
+    box-shadow: 0 12px 22px rgba(33, 70, 255, 0.3);
+    transform: translateY(-1px);
+  }
+  .project-tabs {
+    text-align: center;
+    margin: 10px 0 30px 0;
+  }
+  .project-tab {
+    margin: 0 6px;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    border: 1px solid #d7dbe3;
+    color: #2f3a4a;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .project-tab:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+  }
+  .project-tab.is-active {
+    background: #1a222c;
+    color: #fff;
+    border-color: #1a222c;
+    box-shadow: 0 10px 20px rgba(26, 34, 44, 0.25);
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 22px;
+  }
+  @media only screen and (min-width: 650px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media only screen and (min-width: 950px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .project-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-media {
+    background: #10131a;
+    height: 160px;
+  }
+  .project-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .project-card-body {
+    padding: 16px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .project-card-title {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+  }
+  .project-card-tags {
+    margin: 10px 0 14px 0;
+  }
+  .project-card-tag {
+    display: inline-block;
+    margin: 0 6px 6px 0;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: #f0f2f6;
+    color: #3c4656;
+    font-size: 0.78rem;
+  }
+  .project-card-actions {
+    margin-top: auto;
+  }
+  .project-card .project-link {
+    display: inline-block;
+    text-align: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #2f5fff;
+    color: #2f5fff;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(47, 95, 255, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  }
+  .project-card .project-link:hover {
+    background: #2f5fff;
+    color: #fff;
+    box-shadow: 0 10px 18px rgba(47, 95, 255, 0.25);
+    transform: translateY(-1px);
+  }
+</style>
+
+{% if projects.hero %}
+<div class="projects-hero">
+  <div class="projects-hero-inner">
+    <div class="projects-hero-media">
+      <img alt="{{ projects.hero.image_alt | default: projects.hero.title }}" src="{{ projects.hero.image | prepend: site.baseurl }}" />
+    </div>
+    <div class="projects-hero-content">
+      <span class="projects-hero-label">{{ projects.hero.label }}</span>
+      <h3 style="margin-top:0;">{{ projects.hero.title }}</h3>
+      <p>{{ projects.hero.description }}</p>
+      {% if projects.hero.stack %}
+      <ul>
+        {% for item in projects.hero.stack %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if projects.hero.cta and projects.hero.cta.href %}
+      <a class="project-link projects-hero-cta" href="{{ projects.hero.cta.href }}">{{ projects.hero.cta.text | default: "View Case Study" }}</a>
+      {% endif %}
+    </div>
   </div>
 </div>
-<div class="user-projects">
-  <div class="images-left">
-    <img alt="mountains" src="{{ "/assets/img/pr2.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3>Song skip prediction</h3>
-    <ul>
-      <li>Sklearn, Tensorflow</li>
-      <li>Pandas, numpy, seaborn</li>
-    </ul>
-    <p>This project is a part of the Machine Learning Engineering at Warsaw University of Technology course aimed at developing a practical solution for "Pozytywka," an online music streaming service. As analysts, we step into the role of tackling a vaguely described task, requiring us to specify details for implementation. The challenge involves understanding the problem, analyzing data, and sometimes negotiating with management (tutor) to ensure the models are production-ready and future-proof for subsequent versions.</p>
-    <a class="project-link" href="https://github.com/MikolajSzawerda/Song-skip-predictor">Check it out</a>
+{% endif %}
+
+{% assign default_filter = projects.default_filter | default: projects.categories[0].id %}
+<div class="user-details" style="margin-top:0;">
+  <div class="project-tabs" role="tablist" aria-label="{{ projects.tabs_label | default: "Project categories" }}">
+    {% for category in projects.categories %}
+      {% assign is_active = category.id == default_filter %}
+      <button class="project-link project-tab{% if is_active %} is-active{% endif %}" type="button" data-filter="{{ category.id }}">{{ category.label }}</button>
+    {% endfor %}
   </div>
 </div>
+
+<div class="projects-grid">
+  {% for project in projects.projects %}
+  {% assign category_list = project.categories | join: " " %}
+  <div class="project-card" data-category="{{ category_list }}">
+    <div class="project-card-media">
+      <img alt="{{ project.image_alt | default: project.title }}" src="{{ project.image | prepend: site.baseurl }}" />
+    </div>
+    <div class="project-card-body">
+      <h3 class="project-card-title">{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      {% if project.tags %}
+      <div class="project-card-tags">
+        {% for tag in project.tags %}
+        <span class="project-card-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if project.link and project.link.href %}
+      <div class="project-card-actions">
+        <a class="project-link" href="{{ project.link.href }}">{{ project.link.text | default: "Check it out" }}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll(".project-tab");
+    var cards = document.querySelectorAll(".project-card");
+
+    function setActive(filter) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-filter") === filter;
+        tab.classList.toggle("is-active", isActive);
+      });
+
+      cards.forEach(function (card) {
+        var categories = (card.getAttribute("data-category") || "").split(" ");
+        var show = categories.indexOf(filter) !== -1;
+        card.style.display = show ? "flex" : "none";
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        setActive(tab.getAttribute("data-filter"));
+      });
+    });
+
+    setActive("{{ default_filter }}");
+  })();
+</script>
